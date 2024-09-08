@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+<body class="bg-slate-400">
+
+    <form class="todo-form w-[450px] p-5 rounded-md bg-white mx-auto mt-10" autocomplete="off">
+        <div class="flex justify-between">
+            <input required class="border-[1px] border-slate-500 p-2 rounded-md w-[79%]" name="userTodo" type="text" placeholder="Add your todo">
+            <button class="bg-green-500 text-white font-semibold p-2 w-[20%] rounded-md" type="submit">Add</button>
+        </div>
+        <div class="flex justify-between items-center mt-5">
+          <label class="inline-blog">
+              <input class="hidden" accept="image/png, image/jpeg" type="file" onchange="download(this)">
+              <img class="cursor-pointer" src="./images/save-icon.svg" alt="save-icon" width="30" height="30">
+          </label>
+          <div class="img w-[320px] flex items-center gap-[10px]" style="flex-wrap: wrap;">
+            <!-- <img src="" alt="" width="100" height="50"> -->
+          </div>
+        </div>
+    </form>
+    <div class="w-[450px] bg-white py-5 px-2 rounded-md mx-auto mt-5">
+      <button onclick="renderCompleted('all')" class="select-1 w-[31%] py-2 rounded-md bg-green-300 font-semibold">All (<span>0</span>)</button>
+      <button onclick="renderCompleted('completed')" class="select-2 w-[31%] py-2 rounded-md bg-green-300 font-semibold">Completed (<span>0</span>)</button>
+      <button onclick="renderCompleted('uncompleted')" class="select-3 w-[34%] py-2 rounded-md bg-red-400 font-semibold">UnCompleted (<span>0</span>)</button>
+    </div>
+    <ul class="todo-list w-[450px] space-y-[10px] bg-white p-5 rounded-md mx-auto mt-5">
+      
+    </ul>
+
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+</body> 
+</html>
